@@ -5,6 +5,9 @@ import img2 from '../assets/imgs/image2.png';
 import prevIconImage from '../assets/imgs/prevIcon.png'; // Add your custom previous icon image path here
 import nextIconImage from '../assets/imgs/nextIcon.png'; // Add your custom next icon image path here
 import { Statistics } from './Statistics';
+import img3 from '../assets/imgs/getstartbtn.png';
+import { Security } from './securityupdate';
+import { Link } from 'react-router-dom';
 
 function CustomCarousel() {
     return (
@@ -23,29 +26,33 @@ function CustomCarousel() {
                 {/* Add more Carousel.Items as needed */}
             </Carousel>
 
-            <div className='container' style={{ margin: '40px' }}>
-                <h1 style={{ color: 'black' }} >The Fast Pinpoint</h1>
-                <h1 className="text-danger">Get Started -></h1>
-                <h1 style={{ color: 'black' }}> Tracking & Reservation.</h1>
-                <p>
-                    Pinpoint is the fastest tracking and reservation software <br /> solution for personal and enterprise vehicles for institutes,  <br />offices and companies with live tracking, history recording, <br />estimated arrival time and usage report generation and much more features
-                </p>
+            <div className="container">
+                <div className="row mt-5 mb-5">
+                    <div className='col-lg-6 col-md-6 col-sm-6'>
+
+                        <h1 style={{ color: 'black' }} >The Fast Pinpoint</h1>
+                        <h1 className="text-danger">Get Started -></h1>
+                        <h1 style={{ color: 'black' }}> Tracking & Reservation.</h1>
+                        <p>
+                            Pinpoint is the fastest tracking and reservation software <br /> solution for personal and enterprise vehicles for institutes,  <br />offices and companies with live tracking, history recording, <br />estimated arrival time and usage report generation and much more features
+                        </p>
+
+                    </div>
+                    <div className='col-lg-6 col-md-6 col-sm-6 ' >
+                        <Link to='/about'>
+                        <img src={img3} alt="img3" style={{ height: '100px' }} />
+                        </Link>
+                    </div>
+                </div>
             </div>
+
 
             <Statistics />
 
-            <div className='container' style={{ margin: '40px' }}>
-                <h1 style={{ color: 'black' }} >Pinpoint Security,</h1>
-                <h1 style={{ color: 'black' }}>ensure the best </h1>
-                <h1 style={{ color: 'black' }}>usage for the institutes</h1>
-                <p>
-                    We ensure the best usage for vehicles tracking and reservation system <br /> security with advance encryption standards <br /> and capability of keeping your assets like car, points much more <br />secure with the live tracking system
-                </p>
-            </div>
+            <Security />
 
-            <div className="d-flex align-items-center justify-content-center ">
-                <button className="btn btn-secondary">Get Started</button>
-            </div>
+            
+          
 
         </>
     );
